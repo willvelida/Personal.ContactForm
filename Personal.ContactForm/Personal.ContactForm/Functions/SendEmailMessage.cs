@@ -19,9 +19,12 @@ namespace Personal.ContactForm.Functions
         private readonly IConfiguration _configuration; 
 
         public SendEmailMessage(
-            IServiceBusHelpers serviceBusHelpers)
+            IServiceBusHelpers serviceBusHelpers,
+            IConfiguration configuration)
         {
             _serviceBusHelpers = serviceBusHelpers;
+            _configuration = configuration;
+
         }
 
         [FunctionName(nameof(SendEmailMessage))]
